@@ -83,14 +83,17 @@ window.onload = function(){
 	})
 	//重新开始棋局
 	com.get("restartBtn").addEventListener("click", function(e) {
-		if (confirm("是否确定要重新开始？")){
-			com.get("menuInit").style.display = "block";
-			com.get("wuziBox").style.display = "none";
-		}
+		play.init();
 	})
 		// 悔棋
 	com.get("regretBtn").addEventListener("click", function(e) {
 		play.regret();
+	})
+
+	//重新开始棋局
+	com.get("gohomeBtn").addEventListener("click", function(e) {
+		com.get("menuInit").style.display = "block";
+		com.get("wuziBox").style.display = "none";
 	})
 	//获取单选框选择的值
 	function getRadioValue (name){
