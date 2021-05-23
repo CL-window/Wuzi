@@ -90,8 +90,8 @@ play.clickCanvas = function (e){
 	var point = play.getClickPoint(e);
 	var x = point.x;
 	var y = point.y;
-	com.get("clickAudio").play();
 	if (!play.map[y][x]){
+		com.get("clickAudio").play();
 		var cp= play.clickPoint(x,y);
 		if (cp) {
 			setTimeout(function(){ play.AIPlay( x, y ) }, 100);	
@@ -197,10 +197,14 @@ play.showWin = function (my){
 	play.isPlay = false;
 	
 	setTimeout(function(){ 
+		var msg;
 		if (my===1){
-			alert("恭喜你，你赢了！"); 
+			msg = "恭喜你，你赢了！"; 
 		}else{
-			alert("很遗憾，你输了！");
+			msg = "很遗憾，你输了！";
+		}
+		if (confirm(msg)){
+			play.init();
 		}
 		//com.get("menuInit").style.display = "block";
 		//com.get("bnBox").style.display = "none";
