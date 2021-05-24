@@ -62,11 +62,12 @@ window.onload = function(){
 	com.get("playBtn").addEventListener("click", function(e) {
 			var val = parseInt(getRadioValue("depth"), 10) || 0;
 			play.depth = 1;
+			// 这个depth参数有点奇怪，看起来应该是搜索解法的深度，但是设置为 非 1时，落子代码有点乱跑， 对应代码在AI.getAlphaBeta()内
 
 			play.arg = [
-				{ random:-60, timer:100 ,pur:5 ,rank:"菜鸟水平"},
-				{ random:3,  timer:300 ,pur:5,rank:"中级水平"},
-				{ random:2,  timer:1000 ,pur:14,rank:"高手水平"},
+				{ random:-60, timer:100 ,pur:2, rank:"菜鸟水平"},
+				{ random:5,  timer:300 ,pur:5, rank:"中级水平"},
+				{ random:2,  timer:300 ,pur:14,rank:"高手水平"},
 			][val]
 
 
@@ -160,6 +161,8 @@ var l = console.log;
 
 
 com.class = com.class || {} //类
+
+// Man 类，表示一个棋子， 记录位置信息，是用户的落子还是机器的落子等信息
 com.class.Man = function ( x, y ,my ,isOffense){
 	this.x = x||0;
     this.y = y||0;

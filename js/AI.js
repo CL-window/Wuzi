@@ -18,10 +18,10 @@
 		var results = getAlphaBeta(-999999 ,999999, depth, map, my, x, y);
 		var runTime= new Date().getTime() - initTime;
 		console.log('等级：'+arg.rank
-					+'\r搜索分支：'+ count +'个'
-					+'\r最佳着法：X'+results.x+' Y'+results.y
-					+'\r最佳着法评估：'+results.value+'分'
-					+'\r搜索用时：'+runTime+'毫秒'
+					+'，\r搜索分支：'+ count +'个'
+					+'，\r最佳着法：X'+results.x+' Y'+results.y
+					+'，\r最佳着法评估：'+results.value+'分'
+					+'，\r搜索用时：'+runTime+'毫秒'
 		);
 		return { x : results.x, y : results.y }
 	}

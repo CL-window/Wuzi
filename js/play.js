@@ -119,7 +119,7 @@ play.AIPlay = function (x, y, pace){
 	
 }
 
-//获得点击的着点
+//获得点击的着点, 棋盘0-14编号
 play.getClickPoint = function (e){
 	var domXY = play.getDomXY(com.canvas);
 	var x=Math.round((e.pageX-domXY.x-com.pointStartX-30)/com.spaceX)
